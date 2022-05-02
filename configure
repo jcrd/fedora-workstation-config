@@ -14,6 +14,9 @@ sudo dnf config-manager --set-enabled google-chrome
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo cp files/vscode.repo /etc/yum.repos.d/vscode.repo
 
+# Enable notion repo.
+sudo cp files/notion.repo /etc/yum.repos.d/notion.repo
+
 # Install packages.
 while read -r package; do
     sudo dnf -q install -y "$package"

@@ -6,5 +6,6 @@ google-chrome-stable
 lm_sensors
 make
 neovim
+notion-app-enhanced
 zoxide
 zsh
