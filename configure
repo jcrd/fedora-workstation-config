@@ -1,0 +1,31 @@
+#!/bin/sh
+
+export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
+
+configure() {
+	[ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
+	cd "$2" && ./configure
+}
+
+# Enable google-chrome repo.
+sudo dnf config-manager --set-enabled google-chrome
+
+# Enable vscode repo.
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo cp files/vscode.repo /etc/yum.repos.d/vscode.repo
+
+# Install packages.
+while read -r package; do
+	sudo dnf install -y "$package"
+done < packages.txt
+
+# Set default editor to code.
+xdg-mime default code.desktop text/plain
+
+# Set user's shell to zsh.
+sudo usermod --shell /usr/bin/zsh "$USER"
+
+# Configure dotfiles.
+configure zsh-config ~/.config/zsh
+configure neovim-config ~/.config/nvim
+configure configs ~/.config/configs

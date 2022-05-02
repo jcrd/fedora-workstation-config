@@ -1,0 +1,9 @@
+atool
+code
+direnv
+google-chrome-stable
+lm_sensors
+make
+neovim
+zoxide
+zsh
