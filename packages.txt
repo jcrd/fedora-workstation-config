@@ -1,6 +1,7 @@
 atool
 code
 direnv
+gnome-tweaks
 google-chrome-stable
 lm_sensors
 make
