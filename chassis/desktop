@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Set up ddcutil.
+sudo dnf copr -y enable rockowitz/ddcutil
+sudo dnf -q install -y ddcutil
+
+sudo cp -p /usr/share/ddcutil/data/45-ddcutil-i2c.rules /etc/udev/rules.d
+sudo groupadd --system i2c
+sudo usermod -aG i2c "$USER"

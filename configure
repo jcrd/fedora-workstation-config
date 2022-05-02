@@ -25,6 +25,11 @@ xdg-mime default code.desktop text/plain
 # Set user's shell to zsh.
 sudo usermod --shell /usr/bin/zsh "$USER"
 
+# Chassis-specific configuration.
+if [ -e ./chassis/"$CHASSIS" ]; then
+    ./chassis/"$CHASSIS"
+fi
+
 # Configure dotfiles.
 configure zsh-config ~/.config/zsh
 configure neovim-config ~/.config/nvim
