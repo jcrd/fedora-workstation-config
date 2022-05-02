@@ -3,8 +3,8 @@
 export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
 
 configure() {
-	[ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
-	cd "$2" && ./configure
+    [ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
+    cd "$2" && ./configure
 }
 
 # Enable google-chrome repo.
@@ -16,7 +16,7 @@ sudo cp files/vscode.repo /etc/yum.repos.d/vscode.repo
 
 # Install packages.
 while read -r package; do
-	sudo dnf install -y "$package"
+    sudo dnf -q install -y "$package"
 done < packages.txt
 
 # Set default editor to code.
