@@ -7,5 +7,6 @@ lm_sensors
 make
 neovim
 notion-app-enhanced
+toolboxcutter
 zoxide
 zsh
