@@ -9,3 +9,6 @@ dnf install ddcutil
 sudo cp -p /usr/share/ddcutil/data/45-ddcutil-i2c.rules /etc/udev/rules.d
 sudo groupadd --system i2c
 sudo usermod -aG i2c "$USER"
+
+# Install scripts.
+cp -p files/bin/brightness ~/.local/bin
