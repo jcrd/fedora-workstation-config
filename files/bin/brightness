@@ -4,12 +4,8 @@ readonly STEP=${BRIGHTNESS_STEP:-10}
 
 command -v ddcutil > /dev/null || exit 1
 
-get() {
-    ddcutil getvcp 10 -t | awk '{print $4}'
-}
-
 update() {
-    ddcutil setvcp 10 $(($(get) $1 ${2:-$STEP}))
+    ddcutil setvcp 10 $1 ${2:-$STEP}
 }
 
 case "$1" in
