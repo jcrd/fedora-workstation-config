@@ -53,8 +53,9 @@ while read -r snap; do
 done < snaps.txt
 
 # Chassis-specific configuration.
-if [ -e ./chassis/"$CHASSIS" ]; then
-    ./chassis/"$CHASSIS"
+readonly CHASSIS_DIR=chassis/"$CHASSIS"
+if [ -e "$CHASSIS_DIR" ]; then
+    ./"$CHASSIS_DIR"/configure "$CHASSIS_DIR"
 fi
 
 # Configure dotfiles.
