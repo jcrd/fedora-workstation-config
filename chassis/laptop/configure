@@ -1,0 +1,20 @@
+#!/bin/sh
+
+readonly DIR="$1"
+
+# Configure systemd-logind.
+# This may be overridden by gnome-shell's settings.
+# Alternative: `gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type hibernate`
+sudo mkdir -p /etc/systemd/logind.conf.d
+
+for f in "$DIR"/files/logind.conf.d/*; do
+    sudo cp -p "$f" /etc/systemd/logind.conf.d
+done
+
+# Configure dracut to resume from hibernation.
+# Additional set up is required: GRUB & swap configuration.
+if [ ! -e /etc/dracut.conf.d/resume.conf ]; then
+    sudo mkdir -p /etc/dracut.conf.d
+    echo 'add_dracutmodules+=" resume "' | sudo tee /etc/dracut.conf.d/resume.conf
+    sudo dracut -f
+fi
