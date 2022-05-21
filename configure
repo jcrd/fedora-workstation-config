@@ -34,7 +34,10 @@ sudo cp files/vscode.repo /etc/yum.repos.d/vscode.repo
 # Enable notion repo.
 sudo cp files/notion.repo /etc/yum.repos.d/notion.repo
 
-dnf copr enable jcrd/toolboxcutter
+# Enable copr repos.
+while read -r copr; do
+  dnf copr enable "$copr"
+done < coprs.txt
 
 # Install packages.
 while read -r package; do
