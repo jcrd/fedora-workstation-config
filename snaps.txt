@@ -1,1 +1,3 @@
+android-studio --classic
+flutter --classic
 ngrok

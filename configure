@@ -49,7 +49,7 @@ sudo usermod --shell /usr/bin/zsh "$USER"
 
 # Install snaps.
 while read -r snap; do
-    sudo snap install "$snap"
+    sudo snap install $snap
 done < snaps.txt
 
 # Chassis-specific configuration.
