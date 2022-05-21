@@ -3,6 +3,7 @@ code
 direnv
 gnome-tweaks
 google-chrome-stable
+kitty
 lm_sensors
 make
 neovim
