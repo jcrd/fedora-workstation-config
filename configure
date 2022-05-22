@@ -1,8 +1,9 @@
 #!/bin/sh
 
-source lib/dnf.sh
-
 export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
+export WORKDIR=.
+
+source lib/dnf.sh
 
 configure() {
     [ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
@@ -35,14 +36,10 @@ sudo cp files/vscode.repo /etc/yum.repos.d/vscode.repo
 sudo cp files/notion.repo /etc/yum.repos.d/notion.repo
 
 # Enable copr repos.
-while read -r copr; do
-  dnf copr enable "$copr"
-done < coprs.txt
+enable_coprs
 
 # Install packages.
-while read -r package; do
-    dnf install "$package"
-done < packages.txt
+install_packages
 
 # Set default editor to code.
 xdg-mime default code.desktop text/plain
@@ -51,14 +48,12 @@ xdg-mime default code.desktop text/plain
 sudo usermod --shell /usr/bin/zsh "$USER"
 
 # Install snaps.
-while read -r snap; do
-    sudo snap install $snap
-done < snaps.txt
+install_snaps
 
 # Chassis-specific configuration.
-readonly CHASSIS_DIR=chassis/"$CHASSIS"
-if [ -e "$CHASSIS_DIR" ]; then
-    ./"$CHASSIS_DIR"/configure "$CHASSIS_DIR"
+export WORKDIR=chassis/"$CHASSIS"
+if [ -e "$WORKDIR" ]; then
+    ./"$WORKDIR"/configure
 fi
 
 # Configure dotfiles.
