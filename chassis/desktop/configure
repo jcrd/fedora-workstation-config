@@ -1,6 +1,8 @@
 #!/bin/sh
 
+source lib/btrfs.sh
 source lib/dnf.sh
+source lib/systemd.sh
 
 enable_coprs
 install_packages
@@ -8,6 +10,11 @@ install_packages
 sudo cp -p /usr/share/ddcutil/data/45-ddcutil-i2c.rules /etc/udev/rules.d
 sudo groupadd --system i2c
 sudo usermod -aG i2c "$USER"
+
+sudo cp -p "$WORKDIR"/files/snapback.conf /etc
+create_subvols "$HOME"
+
+enable_units
 
 # Install scripts.
 cp -p "$WORKDIR"/files/bin/brightness ~/.local/bin
