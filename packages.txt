@@ -7,7 +7,6 @@ kitty
 lm_sensors
 make
 neovim
-notion-app-enhanced
 passless
 ranger
 toolboxcutter
