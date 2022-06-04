@@ -4,6 +4,7 @@ export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
 export WORKDIR=.
 
 source lib/dnf.sh
+source lib/snap.sh
 source lib/gsettings.sh
 
 configure() {

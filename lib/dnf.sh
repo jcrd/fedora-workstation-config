@@ -15,10 +15,3 @@ install_packages() {
         dnf install "$package"
     done < "$WORKDIR"/packages.txt
 }
-
-install_snaps() {
-    echo '--- Installing snaps ---'
-    while read -r snap; do
-        sudo snap install $snap
-    done < "$WORKDIR"/snaps.txt
-}
