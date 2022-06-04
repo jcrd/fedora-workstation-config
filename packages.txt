@@ -1,6 +1,7 @@
 arp-scan
 atool
 code
+dconf-editor
 direnv
 gnome-tweaks
 google-chrome-stable
