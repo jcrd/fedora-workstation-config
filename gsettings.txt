@@ -1,0 +1,3 @@
+org.gnome.desktop.search-providers disable-external true
+org.gnome.desktop.interface enable-hot-corners false
+org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab']"

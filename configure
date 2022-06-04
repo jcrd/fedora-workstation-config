@@ -4,6 +4,7 @@ export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
 export WORKDIR=.
 
 source lib/dnf.sh
+source lib/gsettings.sh
 
 configure() {
     [ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
@@ -52,6 +53,9 @@ sudo usermod --shell /usr/bin/zsh "$USER"
 # Install snaps.
 install_snaps
 
+# Set gsettings.
+set_gsettings
+
 # Chassis-specific configuration.
 export WORKDIR=chassis/"$CHASSIS"
 if [ -e "$WORKDIR" ]; then
@@ -62,5 +66,3 @@ fi
 configure zsh-config ~/.config/zsh
 configure neovim-config ~/.config/nvim
 configure configs ~/.config/configs
-
-cat post.txt
