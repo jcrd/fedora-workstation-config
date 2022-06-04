@@ -17,4 +17,5 @@ create_subvols "$HOME"
 enable_units
 
 # Install scripts.
+mkdir -p ~/.local/bin
 cp -p "$WORKDIR"/files/bin/brightness ~/.local/bin
