@@ -1,0 +1,6 @@
+--- Post install steps ---
+
+- GNOME Settings:
+  - Search: Disable 'Application Search'
+  - Multitasking: Disable 'Hot Corner'
+  - Keyboard: Keyboard Shortcuts: Bind 'Switch windows' to Super+Tab

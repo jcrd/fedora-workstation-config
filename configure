@@ -60,3 +60,5 @@ fi
 configure zsh-config ~/.config/zsh
 configure neovim-config ~/.config/nvim
 configure configs ~/.config/configs
+
+cat post.txt
