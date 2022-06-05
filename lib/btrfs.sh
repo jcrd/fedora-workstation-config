@@ -11,7 +11,7 @@ create_subvol() {
         mv "$1" "$1".tmp
     fi
 
-    sudo btrfs subvolume create "$1"
+    btrfs subvolume create "$1"
 
     if [ -e "$1".tmp ]; then
         mv "$1".tmp/* "$1"
