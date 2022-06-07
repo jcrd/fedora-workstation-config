@@ -4,6 +4,7 @@ code
 dconf-editor
 direnv
 gnome-tweaks
+go
 google-chrome-stable
 htop
 kitty
