@@ -1,6 +1,7 @@
 arp-scan
 atool
 code
+d-feet
 dconf-editor
 direnv
 gnome-tweaks
