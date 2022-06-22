@@ -2,12 +2,12 @@
 
 source lib/btrfs.sh
 source lib/dnf.sh
-source lib/flatpak.sh
+source lib/snap.sh
 source lib/systemd.sh
 
 enable_coprs
 install_packages
-install_flatpaks
+install_snaps
 
 sudo cp -p /usr/share/ddcutil/data/45-ddcutil-i2c.rules /etc/udev/rules.d
 sudo groupadd --system i2c
