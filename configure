@@ -54,6 +54,8 @@ sudo usermod --shell /usr/bin/zsh "$USER"
 # Install snaps.
 install_snaps
 
+ln -s ~/snap/android-studio/current ~/Android
+
 # Set gsettings.
 set_gsettings
 
