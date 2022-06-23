@@ -61,8 +61,6 @@ enable_units
 # Install snaps.
 install_snaps
 
-ln -s ~/snap/android-studio/current ~/Android
-
 # Set gsettings.
 set_gsettings
 
