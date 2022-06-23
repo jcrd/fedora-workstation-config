@@ -4,8 +4,9 @@ export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
 export WORKDIR=.
 
 source lib/dnf.sh
-source lib/snap.sh
 source lib/gsettings.sh
+source lib/snap.sh
+source lib/systemd.sh
 
 configure() {
     [ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
@@ -42,6 +43,9 @@ enable_coprs
 # Install packages.
 install_packages
 
+# Copy files.
+sudo cp -r files/nicety /etc
+
 # Enable flathub.
 sudo flatpak remote-modify --enable flathub
 
@@ -50,6 +54,9 @@ xdg-mime default code.desktop text/plain
 
 # Set user's shell to zsh.
 sudo usermod --shell /usr/bin/zsh "$USER"
+
+# Enable systemd units.
+enable_units
 
 # Install snaps.
 install_snaps

@@ -13,6 +13,7 @@ lm_sensors
 make
 mpv
 neovim
+nicety
 passless
 ranger
 shotwell

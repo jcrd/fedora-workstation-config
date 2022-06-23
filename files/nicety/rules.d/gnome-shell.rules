@@ -1,0 +1,1 @@
+{ "name": "gnome-shell", "nice": -20, "io_class": "realtime" }
