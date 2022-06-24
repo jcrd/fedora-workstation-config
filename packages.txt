@@ -1,14 +1,17 @@
+ImageMagick
 arp-scan
 atool
 code
 d-feet
 dconf-editor
 direnv
+gimp
 gnome-extensions-app
 gnome-tweaks
 go
 google-chrome-stable
 htop
+inkscape
 kitty
 lm_sensors
 make
