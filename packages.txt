@@ -4,6 +4,7 @@ code
 d-feet
 dconf-editor
 direnv
+gnome-extensions-app
 gnome-tweaks
 go
 google-chrome-stable
