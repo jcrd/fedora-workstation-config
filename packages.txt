@@ -1,6 +1,7 @@
 ImageMagick
 arp-scan
 atool
+black
 code
 d-feet
 dconf-editor
