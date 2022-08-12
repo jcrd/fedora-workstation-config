@@ -1,3 +1,4 @@
+@virtualization
 ImageMagick
 arp-scan
 atool
