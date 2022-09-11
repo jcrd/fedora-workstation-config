@@ -7,6 +7,7 @@ code
 d-feet
 dconf-editor
 direnv
+gcolor3
 gimp
 gnome-extensions-app
 gnome-tweaks
