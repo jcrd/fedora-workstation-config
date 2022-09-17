@@ -9,6 +9,7 @@ dconf-editor
 direnv
 gcolor3
 gimp
+gitk
 gnome-extensions-app
 gnome-tweaks
 go
