@@ -1,2 +1,3 @@
 ddcutil
+qsynth
 snapback
