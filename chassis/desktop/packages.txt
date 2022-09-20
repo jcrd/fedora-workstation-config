@@ -1,3 +1,4 @@
 ddcutil
+lighten
 qsynth
 snapback

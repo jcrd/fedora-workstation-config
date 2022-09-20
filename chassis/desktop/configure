@@ -16,11 +16,6 @@ sudo usermod -aG dialout "$USER"
 
 mkdir -p "$XDG_CONFIG_HOME"/snapback
 cp -p "$WORKDIR"/files/snapback.conf "$XDG_CONFIG_HOME"/snapback
-
 snapback -i
 
 enable_units
-
-# Install scripts.
-mkdir -p ~/.local/bin
-cp -p "$WORKDIR"/files/bin/brightness ~/.local/bin
