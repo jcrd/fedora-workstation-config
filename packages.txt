@@ -26,6 +26,7 @@ passless
 ranger
 shotwell
 sshfs
+syncthing
 toolboxcutter
 zoxide
 zsh
