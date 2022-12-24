@@ -61,6 +61,9 @@ enable_units
 # Install snaps.
 install_snaps
 
+# Install flatpaks.
+install_flatpaks
+
 # Set gsettings.
 set_gsettings
 
