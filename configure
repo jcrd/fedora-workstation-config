@@ -47,7 +47,7 @@ install_packages
 sudo cp -r files/nicety /etc
 
 # Enable flathub.
-sudo flatpak remote-modify --enable flathub
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Set default editor to code.
 xdg-mime default code.desktop text/plain
