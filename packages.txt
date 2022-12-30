@@ -1,5 +1,6 @@
 @virtualization
 ImageMagick
+aria2
 arp-scan
 atool
 black
