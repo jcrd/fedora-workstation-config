@@ -22,6 +22,7 @@ inkscape
 lm_sensors
 make
 mpv
+multi-git-status
 neovim
 nicety
 passless
