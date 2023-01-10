@@ -8,6 +8,8 @@ enable_coprs
 install_packages
 install_snaps
 
+sudo cp -p "$WORKDIR"/files/50-arduino-lighten.rules /etc/udev/rules.d
+
 sudo cp -p /usr/share/ddcutil/data/45-ddcutil-i2c.rules /etc/udev/rules.d
 sudo groupadd --system i2c
 sudo usermod -aG i2c "$USER"
