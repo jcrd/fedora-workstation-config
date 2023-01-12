@@ -19,6 +19,7 @@ go
 google-chrome-stable
 htop
 inkscape
+inotify-tools
 lm_sensors
 make
 mpv
