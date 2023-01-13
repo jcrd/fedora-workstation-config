@@ -26,11 +26,11 @@ mpv
 multi-git-status
 neovim
 nicety
-passless
 ranger
 shotwell
 sshfs
 syncthing
 toolboxcutter
+wl-clipboard
 zoxide
 zsh
