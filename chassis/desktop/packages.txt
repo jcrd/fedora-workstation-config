@@ -1,3 +1,2 @@
-ddcutil
 lighten
 qsynth
