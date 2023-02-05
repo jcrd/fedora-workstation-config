@@ -1,2 +1,4 @@
 jcrd/nicety
+jcrd/passless
+jcrd/snapback
 jcrd/toolboxcutter

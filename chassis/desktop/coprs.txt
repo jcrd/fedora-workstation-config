@@ -1,3 +1,2 @@
 jcrd/lighten
-jcrd/snapback
 rockowitz/ddcutil

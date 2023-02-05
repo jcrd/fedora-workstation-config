@@ -47,6 +47,11 @@ install_packages
 # Copy files.
 sudo cp -r files/nicety /etc
 
+# Initialize snapback.
+mkdir -p "$XDG_CONFIG_HOME"/snapback
+cp -p "$WORKDIR"/files/snapback.conf "$XDG_CONFIG_HOME"/snapback
+snapback -i
+
 # Enable flathub.
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-modify --enable flathub

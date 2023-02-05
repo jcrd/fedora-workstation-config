@@ -2,7 +2,6 @@
 
 source lib/dnf.sh
 source lib/snap.sh
-source lib/systemd.sh
 
 enable_coprs
 install_packages
@@ -15,9 +14,3 @@ sudo groupadd --system i2c
 sudo usermod -aG i2c "$USER"
 
 sudo usermod -aG dialout "$USER"
-
-mkdir -p "$XDG_CONFIG_HOME"/snapback
-cp -p "$WORKDIR"/files/snapback.conf "$XDG_CONFIG_HOME"/snapback
-snapback -i
-
-enable_units
