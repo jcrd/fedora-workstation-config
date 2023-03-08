@@ -3,7 +3,6 @@ ImageMagick
 aria2
 arp-scan
 atool
-black
 code
 d-feet
 dconf-editor
@@ -26,6 +25,7 @@ mpv
 multi-git-status
 neovim
 nicety
+python3-autopep8
 ranger
 shotwell
 sshfs
