@@ -1,1 +1,2 @@
 com.logseq.Logseq
+com.lakoliu.Furtherance
