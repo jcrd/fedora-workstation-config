@@ -27,6 +27,7 @@ nicety
 python3-autopep8
 ranger
 shotwell
+snapback
 sshfs
 syncthing
 toolboxcutter
