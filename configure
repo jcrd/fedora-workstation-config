@@ -1,5 +1,7 @@
 #!/bin/sh
 
+readonly CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+
 export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
 export WORKDIR=.
 
@@ -48,8 +50,8 @@ install_packages
 sudo cp -r files/nicety /etc
 
 # Initialize snapback.
-mkdir -p "$XDG_CONFIG_HOME"/snapback
-cp -p "$WORKDIR"/files/snapback.conf "$XDG_CONFIG_HOME"/snapback
+mkdir -p "$CONFIG_DIR"/snapback
+cp -p "$WORKDIR"/files/snapback.conf "$CONFIG_DIR"/snapback
 snapback -i
 
 # Enable flathub.
