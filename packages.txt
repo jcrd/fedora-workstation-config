@@ -24,6 +24,7 @@ mpv
 multi-git-status
 neovim
 nicety
+podman-compose
 python3-autopep8
 ranger
 shotwell
