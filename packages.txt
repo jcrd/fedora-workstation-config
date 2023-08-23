@@ -24,6 +24,7 @@ mpv
 multi-git-status
 neovim
 nicety
+npm
 podman-compose
 python3-autopep8
 ranger
@@ -32,6 +33,7 @@ snapback
 sshfs
 syncthing
 toolboxcutter
+watchman
 wl-clipboard
 zoxide
 zsh
