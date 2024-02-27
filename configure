@@ -8,7 +8,6 @@ export WORKDIR=.
 source lib/dnf.sh
 source lib/flatpak.sh
 source lib/gsettings.sh
-source lib/snap.sh
 source lib/systemd.sh
 
 configure() {
@@ -17,10 +16,6 @@ configure() {
     ./configure
     popd
 }
-
-# Install and set up snapd.
-dnf install snapd
-[ ! -e /snap ] && sudo ln -s /var/lib/snapd/snap /snap
 
 # Enable rpmfusion repos.
 dnf install \

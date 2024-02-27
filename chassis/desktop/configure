@@ -1,11 +1,9 @@
 #!/bin/sh
 
 source lib/dnf.sh
-source lib/snap.sh
 
 enable_coprs
 install_packages
-install_snaps
 
 sudo cp -p "$WORKDIR"/files/50-arduino-lighten.rules /etc/udev/rules.d
 
