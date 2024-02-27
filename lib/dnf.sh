@@ -11,7 +11,5 @@ enable_coprs() {
 
 install_packages() {
     echo '--- Installing packages ---'
-    while read -r package; do
-        dnf install "$package"
-    done < "$WORKDIR"/packages.txt
+    dnf install $(< "$WORKDIR"/packages.txt)
 }
