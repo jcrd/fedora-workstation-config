@@ -1,1 +1,1 @@
-lighten
+ddcutil
