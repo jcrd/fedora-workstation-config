@@ -2,6 +2,7 @@ org.gnome.desktop.search-providers disable-external true
 org.gnome.desktop.interface enable-hot-corners false
 org.gnome.desktop.wm.keybindings switch-applications []
 org.gnome.desktop.wm.keybindings switch-windows ['<Super>Tab']
+org.gnome.desktop.wm.keybindings toggle-maximized ['<Super>f']
 org.gnome.desktop.sound.event-sounds false
 org.gnome.shell.app-switcher current-workspace-only true
 org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 1800
