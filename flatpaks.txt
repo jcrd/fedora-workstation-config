@@ -1,6 +1,3 @@
-com.logseq.Logseq
-com.lakoliu.Furtherance
 com.discordapp.Discord
-com.slack.Slack
 com.spotify.Client
 org.gimp.GIMP
