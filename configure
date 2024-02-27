@@ -46,14 +46,6 @@ enable_coprs
 # Install packages.
 install_packages
 
-# Copy files.
-sudo cp -r files/nicety /etc
-
-# Initialize snapback.
-mkdir -p "$CONFIG_DIR"/snapback
-cp -p "$WORKDIR"/files/snapback.conf "$CONFIG_DIR"/snapback
-snapback -i
-
 # Enable flathub.
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-modify --enable flathub
@@ -84,5 +76,4 @@ fi
 
 # Configure dotfiles.
 configure zsh-config ~/.config/zsh
-configure neovim-config ~/.config/nvim
 configure configs ~/.config/configs

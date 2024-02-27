@@ -1,3 +1,0 @@
-jcrd/nicety
-jcrd/snapback
-jcrd/toolboxcutter
