@@ -12,6 +12,7 @@ fzf
 gcolor3
 gitk
 gnome-extensions-app
+gnome-pomodoro
 gnome-tweaks
 go
 google-chrome-stable
