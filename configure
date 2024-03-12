@@ -41,6 +41,11 @@ enable_coprs
 # Install packages.
 install_packages
 
+# Initialize snapback.
+mkdir -p "$CONFIG_DIR"/snapback
+cp -p "$WORKDIR"/files/snapback.conf "$CONFIG_DIR"/snapback
+snapback -i
+
 # Enable flathub.
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-modify --enable flathub
