@@ -59,9 +59,6 @@ sudo usermod --shell /usr/bin/zsh "$USER"
 # Enable systemd units.
 enable_units
 
-# Install snaps.
-install_snaps
-
 # Install flatpaks.
 install_flatpaks
 
