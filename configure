@@ -72,3 +72,6 @@ fi
 # Configure dotfiles.
 configure zsh-config ~/.config/zsh
 configure configs ~/.config/configs
+
+echo -e '\n--- Post-configuration tasks ---'
+cat post_tasks.txt

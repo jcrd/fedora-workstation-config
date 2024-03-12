@@ -1,0 +1,1 @@
+- Configure syncthing: http://localhost:8384/
