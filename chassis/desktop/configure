@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-source lib/dnf.sh
+source lib/apt.sh
 
-enable_coprs
+enable_ppas
 install_packages
 
 sudo groupadd --system i2c

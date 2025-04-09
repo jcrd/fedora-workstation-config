@@ -1,0 +1,6 @@
+[Unit]
+Description=rclone backup - Obsidian
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rclone sync ~/Documents/Obsidian drive:Backup/Documents/Obsidian

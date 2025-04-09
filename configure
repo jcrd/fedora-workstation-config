@@ -1,14 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
 readonly CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 export CHASSIS="$(hostnamectl | awk '$1 == "Chassis:" {print $2}')"
 export WORKDIR=.
 
-source lib/dnf.sh
+source lib/apt.sh
 source lib/flatpak.sh
 source lib/gsettings.sh
 source lib/systemd.sh
+source lib/vscode.sh
 
 configure() {
     [ ! -e "$2" ] && git clone https://github.com/jcrd/"$1" "$2"
@@ -17,34 +18,9 @@ configure() {
     popd
 }
 
-# Enable rpmfusion repos.
-dnf install \
-  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf install \
-  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-# Install codecs.
-dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav \
-  --exclude=gstreamer1-plugins-bad-free-devel
-dnf group upgrade --with-optional Multimedia
-
-# Enable google-chrome repo.
-dnf config-manager --set-enabled google-chrome
-
-# Enable vscode repo.
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo cp files/vscode.repo /etc/yum.repos.d/vscode.repo
-
-# Enable copr repos.
-enable_coprs
-
-# Install packages.
+enable_vscode_repo
+enable_ppas
 install_packages
-
-# Initialize snapback.
-mkdir -p "$CONFIG_DIR"/snapback
-cp -p "$WORKDIR"/files/snapback.conf "$CONFIG_DIR"/snapback
-snapback -i
 
 # Enable flathub.
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -57,6 +33,7 @@ xdg-mime default code.desktop text/plain
 sudo usermod --shell /usr/bin/zsh "$USER"
 
 # Enable systemd units.
+install_user_units
 enable_units
 
 # Install flatpaks.
